@@ -3,30 +3,30 @@
     "setupTasks": [
       {
         "name": "Check Versions",
-        "command": "npm run check"
+        "command": "kotlin -version"
       },
       {
         "name": "Update Packages",
-        "command": "npm run update"
+        "command": "yarn install\nsudo apt update\nsudo apt-get install kotlin"
       }
     ],
   
     // These tasks can be run from CodeSandbox. Running one will open a log in the app.
     "tasks": {
+      "check": {
+        "name": "check",
+        "command": "yarn run check",
+        "runAtStart": true
+      },
       "update": {
         "name": "update",
         "command": "yarn run update",
         "runAtStart": true
       },
-      "check": {
-        "name": "check",
-        "command": "npm run check",
-        "runAtStart": true
-      },
       "start": {
         "name": "start",
         "command": "yarn start",
-        "runAtStart": true
+        "runAtStart": false
       },
     }
   }

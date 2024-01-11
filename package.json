@@ -7,7 +7,7 @@
     "scripts": {
       "check": "kotlin -version\n",
       "update": "yarn install\nsudo apt update\nsudo apt install kotlin\n",
-      "start": "kotlinc index.kt -include-runtime -d main.jar\njava -jar main.jar\nrm ./main.jar\n"
+      "start": "read -p \"Update the packages? [y/n] \" answer && if test \"$answer\" = \"y\" || test \"$answer\" = \"Y\"; then sudo apt-get install kotlin; fi && kotlinc index.kt -include-runtime -d main.jar && echo '' && java -jar main.jar && echo '' && rm ./main.jar"
     },
     "keywords": [
       "kotlin",
